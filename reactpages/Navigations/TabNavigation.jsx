@@ -52,7 +52,19 @@ const TabNavigation = () => {
           },
         }}
       />
-      <Tab.Screen name="Settings" component={SettingScreen} />
+      <Tab.Screen
+        name="Settings"
+        component={SettingScreen}
+        options={{
+          headerTitleAlign: "left",
+
+          headerTintColor: "black",
+          headerTitleStyle: {
+            fontSize: 25,
+            fontWeight: "bold",
+          },
+        }}
+      />
     </Tab.Navigator>
   );
 };
