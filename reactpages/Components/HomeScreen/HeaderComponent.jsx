@@ -6,6 +6,8 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  Platform,
+  StatusBar,
 } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 const HeaderComponent = ({ navigation }) => {
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#ccc",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   logoContainer: {
     padding: 10,

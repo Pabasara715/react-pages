@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../Screens/HomeScreen";
 import ActivityInformation from "../Screens/ActivityScreens/ActivityInformation";
 import ActivityStep from "../Screens/ActivityScreens/ActivityStep";
+import ActivityPublish from "../Screens/ActivityScreens/ActivityPublish";
 import HeaderComponent from "../Components/HomeScreen/HeaderComponent";
 
 const Stack = createStackNavigator();
@@ -27,6 +28,11 @@ const ActivityNavitgation = () => {
       <Stack.Screen
         name="ActivityStep"
         component={ActivityStep}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ActivityPublish"
+        component={ActivityPublish}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

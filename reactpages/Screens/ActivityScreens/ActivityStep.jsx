@@ -88,8 +88,6 @@ const ActivityStep = (props) => {
                     {activity.heading}
                   </Text>
                 </View>
-
-                <Fontisto name="favorite" size={24} color="white" />
               </View>
 
               <View
@@ -113,7 +111,7 @@ const ActivityStep = (props) => {
                   }}
                 >
                   <Text style={{ color: "white", fontWeight: "bold" }}>
-                    To do
+                    In Progress
                   </Text>
                 </View>
                 <View
@@ -363,7 +361,7 @@ const ActivityStep = (props) => {
             marginTop: 25,
           }}
           onPress={() =>
-            navigation.navigate("ActivityStep", {
+            navigation.navigate("ActivityPublish", {
               activity: activity,
             })
           }

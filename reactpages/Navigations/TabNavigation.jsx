@@ -17,7 +17,7 @@ const TabNavigation = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "ActivityNavitgation") {
+          if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Memories") {
             iconName = focused ? "images" : "images-outline";
@@ -34,12 +34,24 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="ActivityNavitgation"
+        name="Home"
         component={ActivityNavitgation}
         options={{ headerShown: false }}
       />
 
-      <Tab.Screen name="Memories" component={Memories} />
+      <Tab.Screen
+        name="Memories"
+        component={Memories}
+        options={{
+          headerTitleAlign: "left",
+
+          headerTintColor: "black",
+          headerTitleStyle: {
+            fontSize: 25,
+            fontWeight: "bold",
+          },
+        }}
+      />
       <Tab.Screen name="Settings" component={SettingScreen} />
     </Tab.Navigator>
   );

@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, Dimensions, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  ScrollView,
+  Platform,
+  StatusBar,
+} from "react-native";
 import ProfileCard from "../Components/HomeScreen/ProfileCard";
 import TodayActivityGallery from "../Components/HomeScreen/TodayActivityGallery";
 import EventCardGallery from "../Components/HomeScreen/EventCardGallery";
@@ -8,7 +16,7 @@ const screenwidth = Dimensions.get("window").width;
 
 const HomeScreen = () => {
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
+    <ScrollView>
       <View style={styles.container}>
         <ProfileCard />
         <View style={styles.catergotyToday}>
