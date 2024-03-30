@@ -1,13 +1,22 @@
 import React from "react";
-import { View, Text } from "react-native";
-import ProfileCard from "../Components/ProfileCard";
+import { View, Text, StyleSheet } from "react-native";
+import ProfileCard from "../Components/HomeScreen/ProfileCard";
+import TodayActivityGallery from "../Components/HomeScreen/TodayActivityGallery";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <ProfileCard />
+      <TodayActivityGallery />
     </View>
   );
 };
 
 export default HomeScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
