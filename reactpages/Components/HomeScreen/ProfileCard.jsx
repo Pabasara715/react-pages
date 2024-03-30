@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
   barcontainer: {
     marginTop: 4,
     color: "#fff",
+    marginBottom: 4,
   },
 
   container: {
@@ -82,19 +83,19 @@ const styles = StyleSheet.create({
   },
 
   profileImage: {
-    width: screenwidth / 5,
-    height: screenwidth / 5,
+    width: screenwidth / 4.5,
+    height: screenwidth / 4.5,
     borderRadius: screenwidth / 6,
   },
   name: {
     color: "white",
     fontWeight: "bold",
-    fontSize: 15,
+    fontSize: 20,
   },
 
   quote: {
     color: "white",
-    fontSize: 10,
+    fontSize: 14,
     display: "flex",
     lineHeight: 20,
   },

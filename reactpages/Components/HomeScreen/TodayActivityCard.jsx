@@ -10,25 +10,22 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const screenwidth = Dimensions.get("window").width;
 const screenheight = Dimensions.get("window").height;
-const colorList = [
-  { offset: "0%", color: "#231557", opacity: "1" },
-
-  { offset: "100%", color: "#FFF800", opacity: "0" },
-];
 
 const TodayActivityCard = (props) => {
   return (
     <ImageBackground
-      source={require("../../assets/HomeScreen/greenkid.jpg")}
+      source={{
+        uri: props.imgUrl,
+      }}
       style={styles.container}
       imageStyle={{ borderRadius: 15 }}
     >
       <LinearGradient
         style={styles.headingAndSub}
-        colors={["green", "rgba(0, 255, 0, 0)"]}
+        colors={[props.colour, "transparent"]}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 1 }}
-        locations={[0.5, 1]}
+        locations={[0.3, 1]}
       >
         <View style={styles.subcontainer}>
           <Text style={styles.heading}>{props.heading}</Text>
@@ -39,7 +36,7 @@ const TodayActivityCard = (props) => {
         </View>
       </LinearGradient>
 
-      <View style={styles.tagviews}>
+      <View style={[styles.tagviews, { backgroundColor: props.colour }]}>
         <View style={styles.subcontainer}>
           <Text style={styles.heading}>{props.heading}</Text>
           <Text style={styles.heading}>{props.rate}</Text>
@@ -63,7 +60,7 @@ const styles = StyleSheet.create({
     width: screenwidth / 1.5,
     height: screenwidth,
     objectFit: "contain",
-    margin: 20,
+    margin: 10,
   },
   headingAndSub: {
     display: "flex",
@@ -100,7 +97,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    backgroundColor: "green",
     padding: 10,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
