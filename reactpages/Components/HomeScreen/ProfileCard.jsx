@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Dimensions, Image } from "react-native";
 import CircularProgress from "react-native-circular-progress-indicator";
 import * as Progress from "react-native-progress";
-
+import { FontAwesome } from "@expo/vector-icons";
 const screenwidth = Dimensions.get("window").width;
 const screenheight = Dimensions.get("window").height;
 
@@ -44,7 +44,21 @@ const ProfileCard = () => {
           }}
         >
           <Text style={styles.quote}>Achievement Level</Text>
-          <Text style={styles.quote}>70</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <FontAwesome
+              style={{ marginRight: 1 }}
+              name="star"
+              size={12}
+              color="white"
+            />
+            <Text style={styles.quote}>70</Text>
+          </View>
         </View>
         <Progress.Bar
           color="white"

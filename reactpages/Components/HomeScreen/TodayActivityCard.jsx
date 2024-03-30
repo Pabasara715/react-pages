@@ -1,4 +1,5 @@
 import React from "react";
+import { FontAwesome } from "@expo/vector-icons";
 import {
   View,
   Text,
@@ -28,11 +29,26 @@ const TodayActivityCard = (props) => {
         colors={[props.colour, "transparent"]}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 1 }}
-        locations={[0.3, 1]}
+        locations={[0.5, 1]}
       >
         <View style={styles.subcontainer}>
           <Text style={styles.heading}>{props.heading}</Text>
-          <Text style={styles.heading}>{props.rate}</Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <FontAwesome
+              style={{ marginRight: 1 }}
+              name="star"
+              size={10}
+              color="white"
+            />
+            <Text style={styles.heading}>{props.rate}</Text>
+          </View>
         </View>
         <View style={styles.subheading}>
           <Text style={styles.subheading}>{props.subHeading}</Text>
@@ -86,13 +102,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     color: "white",
     width: "100%",
-    flexWrap: "wrap",
+    justifyContent: "space-between",
     alignItems: "center",
+    paddingLeft: 4,
+    paddingRight: 4,
+    marginBottom: 10,
   },
   heading: {
     color: "white",
     fontSize: 12,
-    paddingBottom: 10,
   },
   subheading: {
     width: "100%",
