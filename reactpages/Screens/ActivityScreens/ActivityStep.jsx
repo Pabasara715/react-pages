@@ -21,7 +21,7 @@ import TagComponent from "../../Components/HomeScreen/TagComponent";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 const screenwidth = Dimensions.get("window").width;
-const ActivityInformation = (props) => {
+const ActivityStep = (props) => {
   const route = useRoute();
   const navigation = useNavigation();
   const { activity } = route.params;
@@ -188,94 +188,160 @@ const ActivityInformation = (props) => {
         </SafeAreaView>
       </ImageBackground>
       <View style={{ display: "flex", flexDirection: "column", padding: 25 }}>
-        <Text style={{ fontSize: 22, fontWeight: "bold" }}>Information</Text>
+        <Text style={{ fontSize: 22, fontWeight: "bold" }}>Activity Steps</Text>
         <View>
           <View style={styles.viewGroup1}>
             <Entypo name="dot-single" size={24} color="black" />
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Introduction
+              Choose a Prime Spot
             </Text>
           </View>
-          <Text style={styles.textGroup2}>
-            Making sandcastles is a fun and classic beach activity that allows
-            children to explore their creativity while enjoying the outdoors. It
-            helps develop fine motor skills. spatial awareness, and planning
-            abilities.
-          </Text>
-        </View>
-        <View>
-          <View style={styles.viewGroup1}>
-            <Entypo name="dot-single" size={24} color="black" />
-            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Preparation Time
-            </Text>
-          </View>
-          <Text style={styles.textGroup1}>Low</Text>
-        </View>
-        <View>
-          <View style={styles.viewGroup1}>
-            <Entypo name="dot-single" size={24} color="black" />
-            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Duration of Activity
-            </Text>
-          </View>
-          <Text style={styles.textGroup1}>Varies</Text>
-        </View>
-        <View>
-          <View style={styles.viewGroup1}>
-            <Entypo name="dot-single" size={24} color="black" />
-            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Materials Needed
-            </Text>
-          </View>
-          <Text style={styles.textGroup2}>
-            1. Sand (at a beach or in a sandbox)
-          </Text>
-          <Text style={styles.textGroup2}>2. Buckets, shovels</Text>
-          <Text style={styles.textGroup2}>3. Molds</Text>
-          <Text style={styles.textGroup2}>
-            4. Natural decorations (shells, rocks, seaweed, etc.)
-          </Text>
           <Text
+            style={{ fontSize: 14, padding: 5, paddingLeft: 27, color: "grey" }}
+          >
+            Select a flat area to the waters edge to ensure sandcastle gets the
+            right consistency.
+          </Text>
+        </View>
+        <View>
+          <View style={styles.viewGroup1}>
+            <Entypo name="dot-single" size={24} color="black" />
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Gather Your Tools
+            </Text>
+          </View>
+          <Text style={styles.textStyle1}>
+            Arm yourself with ouckets. shovels, and any sculpting toms you
+            prefer, the merrier!
+          </Text>
+        </View>
+        <View>
+          <View style={styles.viewGroup1}>
+            <Entypo name="dot-single" size={24} color="black" />
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Moisten the Sand
+            </Text>
+          </View>
+          <Text style={styles.textStyle1}>
+            Mix water inta the sand until it reaches a moldable consistency. Too
+            dry, and it won't hold: too wet, and it'll collapse.
+          </Text>
+          <View
             style={{
-              fontSize: 14,
-              padding: 5,
-              paddingBottom: 10,
-              paddingLeft: 27,
-              color: "grey",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "flex-start",
             }}
           >
-            5. camera or smartphone for taking pictures
+            <View style={styles.viewGroup2}>
+              <Image
+                style={{
+                  borderRadius: 15,
+                  width: screenwidth / 3,
+                  height: screenwidth / 3.5,
+                }}
+                source={require("../../assets/HomeScreen/greenkid.jpg")}
+              />
+              <Text style={styles.capttionStyle}>Caption to the picture 1</Text>
+            </View>
+            <View style={styles.viewGroup2}>
+              <Image
+                style={{
+                  borderRadius: 15,
+                  width: screenwidth / 3,
+                  height: screenwidth / 3.5,
+                }}
+                source={require("../../assets/HomeScreen/greenkid.jpg")}
+              />
+              <Text style={styles.capttionStyle}>
+                Caption to the picture 2. Caption in the line two
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View>
+          <View style={styles.viewGroup1}>
+            <Entypo name="dot-single" size={24} color="black" />
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Build a Foundation
+            </Text>
+          </View>
+          <Text
+            style={{ fontSize: 14, padding: 5, paddingLeft: 27, color: "grey" }}
+          >
+            Start with a solid oase by filling a bucket with wet sand and
+            flipping it upside down. Pat it down firmly.
           </Text>
         </View>
         <View>
           <View style={styles.viewGroup1}>
             <Entypo name="dot-single" size={24} color="black" />
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Skills Developed
+              Layer by Layer
             </Text>
           </View>
-          <Text style={styles.textGroup1}>
-            Creativity, Fine Motor Skills, Planning and Building Skills
+          <Text style={styles.textStyle1}>
+            Add layers using more buckets or by piing ane shaping wet sand with
+            your Yards. Smooth each layer for stability.
+          </Text>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "flex-start",
+            }}
+          >
+            <View style={styles.viewGroup2}>
+              <Image
+                style={{
+                  borderRadius: 15,
+                  width: screenwidth / 3,
+                  height: screenwidth / 3.5,
+                }}
+                source={require("../../assets/HomeScreen/greenkid.jpg")}
+              />
+              <Text style={styles.capttionStyle}>Caption to the picture 1</Text>
+            </View>
+            <View style={styles.viewGroup2}>
+              <Image
+                style={{
+                  borderRadius: 15,
+                  width: screenwidth / 3,
+                  height: screenwidth / 3.5,
+                }}
+                source={require("../../assets/HomeScreen/greenkid.jpg")}
+              />
+              <Text style={styles.capttionStyle}>
+                Caption to the picture 2. Caption in the line two
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View>
+          <View style={styles.viewGroup1}>
+            <Entypo name="dot-single" size={24} color="black" />
+            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
+              Carve and Sculpt
+            </Text>
+          </View>
+          <Text style={styles.textStyle1}>
+            Use Shovels. hands, or sculptlljg tools to shape your castle, Get
+            creative with turrets. walls. end moats.
           </Text>
         </View>
         <View>
           <View style={styles.viewGroup1}>
             <Entypo name="dot-single" size={24} color="black" />
             <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Safety Level
+              Detailing and Decorating:
             </Text>
           </View>
-          <Text style={styles.textGroup1}>Supervised</Text>
-        </View>
-        <View>
-          <View style={styles.viewGroup1}>
-            <Entypo name="dot-single" size={24} color="black" />
-            <Text style={{ fontSize: 16, fontWeight: "bold" }}>
-              Learning Areas
-            </Text>
-          </View>
-          <Text style={styles.textGroup1}>Arts, Physical Education</Text>
+          <Text style={styles.textStyle1}>
+            Enhance your masterpiece with seashells. sticks. or other beach
+            treasures. Let your imagination run wild!
+          </Text>
         </View>
         <View>
           <View style={styles.viewGroup1}>
@@ -284,7 +350,7 @@ const ActivityInformation = (props) => {
               Weather Suitability
             </Text>
           </View>
-          <Text style={styles.textGroup1}>Suitable for Sunny/Good Weather</Text>
+          <Text style={styles.textStyle1}>Suitable for Sunny/Good Weather</Text>
         </View>
         <TouchableOpacity
           style={{
@@ -303,7 +369,7 @@ const ActivityInformation = (props) => {
           }
         >
           <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>
-            Select and Start
+            Mark Complete
           </Text>
         </TouchableOpacity>
       </View>
@@ -311,7 +377,7 @@ const ActivityInformation = (props) => {
   );
 };
 
-export default ActivityInformation;
+export default ActivityStep;
 const styles = StyleSheet.create({
   imagecontainer: {
     width: "100%",
@@ -358,6 +424,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 
+  textStyle1: {
+    fontSize: 14,
+    padding: 5,
+    paddingLeft: 27,
+    paddingBottom: 10,
+    color: "grey",
+  },
+
   viewGroup1: {
     display: "flex",
     flexDirection: "row",
@@ -367,13 +441,17 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
 
-  textGroup1: {
-    fontSize: 14,
-    padding: 5,
-    paddingLeft: 27,
-    paddingBottom: 10,
-    color: "grey",
+  viewGroup2: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center",
   },
 
-  textGroup2: { fontSize: 14, padding: 5, paddingLeft: 27, color: "grey" },
+  capttionStyle: {
+    width: screenwidth / 3,
+    display: "flex",
+    textAlign: "center",
+    paddingTop: 5,
+  },
 });

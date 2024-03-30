@@ -149,7 +149,13 @@ const TodayActivityGallery = () => {
       showsHorizontalScrollIndicator={false}
       data={data_sample}
       renderItem={({ item, index }) => (
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("ActivityInformation", {
+              activity: item,
+            })
+          }
+        >
           <TodayActivityCard
             heading={item.heading}
             subHeading={item.subHeading}

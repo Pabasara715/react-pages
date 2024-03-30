@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../Screens/HomeScreen";
 import SettingScreen from "../Screens/SettingScreen";
 import Memories from "../Screens/Memories";
-import { Ionicons } from "@expo/vector-icons"; // Assuming you're using Expo for vector icons
+import { Ionicons } from "@expo/vector-icons";
 import HeaderComponent from "../Components/HomeScreen/HeaderComponent";
+import ActivityNavitgation from "./ActivityNavitgation";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,7 +17,7 @@ const TabNavigation = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "Home") {
+          if (route.name === "ActivityNavitgation") {
             iconName = focused ? "home" : "home-outline";
           } else if (route.name === "Memories") {
             iconName = focused ? "images" : "images-outline";
@@ -33,14 +34,11 @@ const TabNavigation = () => {
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          header: ({ navigation }) => (
-            <HeaderComponent navigation={navigation} />
-          ),
-        }}
+        name="ActivityNavitgation"
+        component={ActivityNavitgation}
+        options={{ headerShown: false }}
       />
+
       <Tab.Screen name="Memories" component={Memories} />
       <Tab.Screen name="Settings" component={SettingScreen} />
     </Tab.Navigator>
