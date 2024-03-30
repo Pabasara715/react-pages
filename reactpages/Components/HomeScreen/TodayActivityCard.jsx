@@ -5,8 +5,11 @@ import {
   Dimensions,
   StyleSheet,
   ImageBackground,
+  Image,
+  ScrollView,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import TagComponent from "./TagComponent";
 
 const screenwidth = Dimensions.get("window").width;
 const screenheight = Dimensions.get("window").height;
@@ -37,13 +40,14 @@ const TodayActivityCard = (props) => {
       </LinearGradient>
 
       <View style={[styles.tagviews, { backgroundColor: props.colour }]}>
-        <View style={styles.subcontainer}>
-          <Text style={styles.heading}>{props.heading}</Text>
-          <Text style={styles.heading}>{props.rate}</Text>
-        </View>
-        <View style={styles.subheading}>
-          <Text style={styles.subheading}>{props.subHeading}</Text>
-        </View>
+        <Image
+          style={styles.profileImage}
+          source={require("../../assets/HomeScreen/Profile_pic.jpg")}
+        />
+
+        {props.tags.map((tag, index) => (
+          <TagComponent key={index} tag={tag} />
+        ))}
       </View>
     </ImageBackground>
   );
@@ -74,10 +78,11 @@ const styles = StyleSheet.create({
 
   subcontainer: {
     display: "flex",
+    flexDirection: "row",
     color: "white",
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexWrap: "wrap",
+    alignItems: "center",
   },
   heading: {
     color: "white",
@@ -96,10 +101,19 @@ const styles = StyleSheet.create({
   tagviews: {
     display: "flex",
     flexDirection: "column",
-    width: "100%",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexWrap: "wrap",
     padding: 10,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
     flex: 0.2,
+    overflow: "scroll",
+  },
+  profileImage: {
+    width: screenwidth / 15,
+    height: screenwidth / 15,
+    borderRadius: screenwidth / 15,
+    marginBottom: 4,
   },
 });

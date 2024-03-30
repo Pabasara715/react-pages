@@ -40,7 +40,7 @@ const HomeScreen = () => {
 
         <View style={styles.catergotyToday}>
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-            Special Event
+            Special Events
           </Text>
           <Text style={{ fontSize: 16, color: "grey" }}>Upcoming</Text>
         </View>

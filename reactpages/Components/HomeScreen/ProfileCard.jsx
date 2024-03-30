@@ -26,10 +26,10 @@ const ProfileCard = () => {
           inActiveStrokeWidth={5}
           strokeLinecap="squre"
           radius={screenwidth / 14}
-          inActiveStrokeColor={"#fff"}
+          inActiveStrokeColor={"#ff959a"}
           progressValueColor={"#fff"}
           valueSuffix={"x"}
-          activeStrokeColor="#ff959a"
+          activeStrokeColor="#ffff"
           title="Time"
           titleFontSize={8}
           titleColor="#fff"
