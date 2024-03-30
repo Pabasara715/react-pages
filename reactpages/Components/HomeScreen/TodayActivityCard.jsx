@@ -45,9 +45,14 @@ const TodayActivityCard = (props) => {
           source={require("../../assets/HomeScreen/Profile_pic.jpg")}
         />
 
-        {props.tags.map((tag, index) => (
+        {props.tags.slice(0, 6).map((tag, index) => (
           <TagComponent key={index} tag={tag} />
         ))}
+        {props.tags.length > 6 && (
+          <Text style={{ color: "white", fontSize: 12, marginLeft: 4 }}>
+            +{props.tags.length - 6}
+          </Text>
+        )}
       </View>
     </ImageBackground>
   );
@@ -61,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     borderRadius: 15,
-    width: screenwidth / 1.5,
+    width: screenwidth / 1.7,
     height: screenwidth,
     objectFit: "contain",
     margin: 10,
@@ -100,20 +105,22 @@ const styles = StyleSheet.create({
   },
   tagviews: {
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-evenly",
+    flexDirection: "row",
+    justifyContent: "flex-start",
     alignItems: "center",
     flexWrap: "wrap",
     padding: 10,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
-    flex: 0.2,
+    height: 90,
     overflow: "scroll",
+    width: "100%",
   },
   profileImage: {
     width: screenwidth / 15,
     height: screenwidth / 15,
     borderRadius: screenwidth / 15,
     marginBottom: 4,
+    marginRight: 4,
   },
 });
