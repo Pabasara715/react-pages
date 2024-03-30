@@ -1,8 +1,10 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import TodayActivityCard from "./TodayActivityCard";
+import { useNavigation } from "@react-navigation/native";
 
 const TodayActivityGallery = () => {
+  const navigation = useNavigation();
   const data_sample = [
     {
       heading: "Activity 01",
@@ -147,14 +149,16 @@ const TodayActivityGallery = () => {
       showsHorizontalScrollIndicator={false}
       data={data_sample}
       renderItem={({ item, index }) => (
-        <TodayActivityCard
-          heading={item.heading}
-          subHeading={item.subHeading}
-          rate={item.rate}
-          colour={item.color}
-          imgUrl={item.imgUrl}
-          tags={item.tags}
-        />
+        <TouchableOpacity>
+          <TodayActivityCard
+            heading={item.heading}
+            subHeading={item.subHeading}
+            rate={item.rate}
+            colour={item.color}
+            imgUrl={item.imgUrl}
+            tags={item.tags}
+          />
+        </TouchableOpacity>
       )}
     />
   );
