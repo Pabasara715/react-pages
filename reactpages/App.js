@@ -5,30 +5,22 @@ import {
   Text,
   View,
   StatusBar,
-  SafeAreaView,
+  SafeAreaProvider,
   Platform,
   Dimensions,
 } from "react-native";
+
 import HomeScreen from "./Screens/HomeScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./Navigations/TabNavigation";
+import Login from "./Screens/LoginScreen/SignUp";
+import LoginNavigation from "./Navigations/LoginNavigation";
 export default function App() {
   console.log(Dimensions.get("screen"));
 
   return (
     <NavigationContainer>
-      <TabNavigation />
-      {/* <SafeAreaView style={styles.container}>
-        <HomeScreen />
-      </SafeAreaView> */}
+      <LoginNavigation />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-
-    alignItems: "center",
-  },
-});

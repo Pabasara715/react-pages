@@ -12,7 +12,7 @@ const ActivityNavitgation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
+        name="Home_"
         component={HomeScreen}
         options={{
           header: ({ navigation }) => (

@@ -7,6 +7,7 @@ import {
   Dimensions,
   StyleSheet,
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 const screenwidth = Dimensions.get("window").width;
 const Memories = () => {
   return (
@@ -22,7 +23,7 @@ const Memories = () => {
         }}
       >
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>November</Text>
-        <View
+        <TouchableOpacity
           style={{
             display: "flex",
             borderRadius: 20,
@@ -36,7 +37,7 @@ const Memories = () => {
           <Text style={{ color: "white", fontWeight: "bold" }}>
             Create Collage
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -74,7 +75,7 @@ const Memories = () => {
         }}
       >
         <Text style={{ fontSize: 20, fontWeight: "bold" }}>October</Text>
-        <View
+        <TouchableOpacity
           style={{
             display: "flex",
             borderRadius: 20,
@@ -88,7 +89,7 @@ const Memories = () => {
           <Text style={{ color: "white", fontWeight: "bold" }}>
             Create Collage
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <View
         style={{

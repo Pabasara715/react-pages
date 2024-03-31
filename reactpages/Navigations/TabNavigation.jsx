@@ -27,11 +27,9 @@ const TabNavigation = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        tabBarActiveTintColor: "#fd6f73",
+        tabBarInactiveTintColor: "gray",
       })}
-      tabBarOptions={{
-        activeTintColor: "#fd6f73",
-        inactiveTintColor: "gray",
-      }}
     >
       <Tab.Screen
         name="Home"
