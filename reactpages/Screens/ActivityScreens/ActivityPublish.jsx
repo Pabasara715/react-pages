@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { COLORS } from "../../styles.js";
 import {
   View,
   Text,
@@ -232,7 +233,7 @@ const ActivityPublish = (props) => {
 
         <TouchableOpacity
           style={{
-            backgroundColor: "#fd6e75",
+            backgroundColor: COLORS.btnColor,
             padding: 15,
             borderRadius: 25,
             height: 50,
@@ -259,7 +260,7 @@ export default ActivityPublish;
 const styles = StyleSheet.create({
   imagecontainer: {
     width: "100%",
-    height: screenwidth * 1.2,
+    height: screenwidth * 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   subheading: {
@@ -271,35 +272,17 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 18,
   },
-  profileImage: {
-    width: screenwidth / 15,
-    height: screenwidth / 15,
-    borderRadius: screenwidth / 15,
-    marginBottom: 4,
-    marginRight: 4,
-  },
+
   headingAndSub: {
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    padding: 15,
+    padding: 10,
   },
 
   heading: {
     color: "white",
     fontSize: 12,
-  },
-  tagviews: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    flexWrap: "wrap",
-    paddingTop: 10,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-    height: 50,
-    width: "100%",
   },
 
   textStyle1: {

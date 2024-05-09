@@ -1,4 +1,5 @@
 import React from "react";
+import { COLORS } from "../../styles.js";
 import {
   View,
   Text,
@@ -352,7 +353,7 @@ const ActivityStep = (props) => {
         </View>
         <TouchableOpacity
           style={{
-            backgroundColor: "#fd6e75",
+            backgroundColor: COLORS.btnColor,
             padding: 15,
             borderRadius: 25,
             height: 50,
