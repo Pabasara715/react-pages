@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -23,6 +23,13 @@ const ActivityPublish = (props) => {
   const route = useRoute();
   const navigation = useNavigation();
   const { activity } = route.params;
+
+  const [selectedIcon, setSelectedIcon] = useState(null);
+
+  const handleIconPress = (iconName) => {
+    setSelectedIcon(iconName === selectedIcon ? null : iconName);
+  };
+
   return (
     <ScrollView>
       <ImageBackground
@@ -186,61 +193,39 @@ const ActivityPublish = (props) => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-around",
-              width: "50%",
+              width: "60%",
               alignItems: "center",
             }}
           >
             <TouchableOpacity
               style={{
-                width: 50,
-                height: 50,
-                borderRadius: 50 / 2,
-                backgroundColor: "#fba8af",
-                justifyContent: "center",
-                alignItems: "center",
+                ...styles.button,
+                backgroundColor:
+                  selectedIcon === "dislike" ? "#f64d5a" : "#fba8af",
               }}
+              onPress={() => handleIconPress("dislike")}
             >
-              <Fontisto
-                style={{ paddingTop: 4 }}
-                name="dislike"
-                size={24}
-                color="white"
-              />
+              <Fontisto name="dislike" size={24} color="#ffffff" />
             </TouchableOpacity>
             <TouchableOpacity
               style={{
-                width: 50,
-                height: 50,
-                borderRadius: 50 / 2,
-                backgroundColor: "#fba8af",
-                justifyContent: "center",
-                alignItems: "center",
+                ...styles.button,
+                backgroundColor:
+                  selectedIcon === "like" ? "#f64d5a" : "#fba8af",
               }}
+              onPress={() => handleIconPress("like")}
             >
-              <Fontisto
-                style={{ paddingBottom: 4 }}
-                name="like"
-                size={24}
-                color="white"
-              />
+              <Fontisto name="like" size={24} color="#ffffff" />
             </TouchableOpacity>
-
             <TouchableOpacity
               style={{
-                width: 50,
-                height: 50,
-                borderRadius: 50 / 2,
-                backgroundColor: "#f64d5a",
-                justifyContent: "center",
-                alignItems: "center",
+                ...styles.button,
+                backgroundColor:
+                  selectedIcon === "heart" ? "#f64d5a" : "#fba8af",
               }}
+              onPress={() => handleIconPress("heart")}
             >
-              <AntDesign
-                style={{ paddingTop: 3 }}
-                name="heart"
-                size={24}
-                color="white"
-              />
+              <AntDesign name="heart" size={24} color="#ffffff" />
             </TouchableOpacity>
           </View>
         </View>
@@ -323,6 +308,14 @@ const styles = StyleSheet.create({
     paddingLeft: 27,
     paddingBottom: 10,
     color: "grey",
+  },
+
+  button: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   viewGroup1: {

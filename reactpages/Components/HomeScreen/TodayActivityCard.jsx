@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
-    height: 100,
+    height: 80,
     overflow: "scroll",
     width: "100%",
   },
