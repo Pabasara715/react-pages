@@ -8,6 +8,49 @@ const screenheight = Dimensions.get("window").height;
 
 const ProfileCard = () => {
   return (
+    // <View
+    //   style={{
+    //     display: "flex",
+    //     alignItems: "center",
+    //     borderRadius: 15,
+    //     backgroundColor: "#ff5e64",
+    //     width: screenwidth - 50,
+    //     padding: 10,
+    //   }}
+    // >
+    //   <View
+    //     style={{
+    //       display: "flex",
+    //       flexDirection: "row",
+    //       justifyContent: "flex-start",
+    //       alignItems: "center",
+    //       width: "100%",
+    //       paddingHorizontal: 10,
+    //     }}
+    //   >
+    //     <Image
+    //       style={{
+    //         width: screenwidth / 4.5,
+    //         height: screenwidth / 4.5,
+    //         borderRadius: screenwidth / 6,
+    //         margin: 5,
+    //       }}
+    //       source={require("../../assets/HomeScreen/Profile_pic.jpg")}
+    //     />
+
+    //     <Text
+    //       style={{
+    //         color: "white",
+    //         fontWeight: "bold",
+    //         fontSize: 20,
+    //         paddingHorizontal: 20,
+    //       }}
+    //     >
+    //       Anya & Ciri
+    //     </Text>
+    //   </View>
+    // </View>
+
     <View style={styles.maincontainer}>
       <View style={styles.container}>
         <Image
