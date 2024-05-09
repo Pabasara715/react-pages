@@ -402,7 +402,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    padding: 15,
+    padding: 10,
+    paddingBottom: 0,
   },
 
   heading: {
@@ -415,11 +416,11 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     flexWrap: "wrap",
-    paddingTop: 10,
+    paddingTop: 20,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
-    height: 50,
     width: "100%",
+    height: "auto",
   },
 
   textStyle1: {

@@ -341,6 +341,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
+    alignItems: "center",
     flexWrap: "wrap",
     paddingTop: 20,
     borderBottomLeftRadius: 15,
