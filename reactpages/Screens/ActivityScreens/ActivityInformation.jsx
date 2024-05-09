@@ -33,159 +33,155 @@ const ActivityInformation = (props) => {
         }}
         style={styles.imagecontainer}
       >
-        <SafeAreaView>
-          <LinearGradient
-            style={styles.headingAndSub}
-            colors={[activity.color, "transparent"]}
-            start={{ x: 0.5, y: 1 }}
-            end={{ x: 0.5, y: 0 }}
-            locations={[0.4, 0.7]}
+        <LinearGradient
+          style={styles.headingAndSub}
+          colors={[activity.color, "transparent"]}
+          start={{ x: 0.5, y: 1 }}
+          end={{ x: 0.5, y: 0 }}
+          locations={[0.4, 0.7]}
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+              width: "100%",
+              padding: 10,
+              paddingBottom: 0,
+            }}
           >
             <View
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
                 justifyContent: "space-between",
-                height: "100%",
-                width: "100%",
-                padding: 15,
-                paddingBottom: 25,
+                alignContent: "center",
               }}
             >
               <View
                 style={{
                   display: "flex",
                   flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignContent: "center",
+                  alignItems: "center",
                 }}
               >
-                <View
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                  <AntDesign
+                    style={{ paddingRight: 10 }}
+                    name="leftcircle"
+                    size={30}
+                    color="white"
+                  />
+                </TouchableOpacity>
+
+                <Text
                   style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
+                    fontSize: 25,
+                    fontWeight: "bold",
+                    color: "white",
+                    textShadowColor: "black",
+                    textShadowRadius: 5,
                   }}
                 >
-                  <TouchableOpacity onPress={() => navigation.goBack()}>
-                    <AntDesign
-                      style={{ paddingRight: 10 }}
-                      name="leftcircle"
-                      size={30}
-                      color="white"
-                    />
-                  </TouchableOpacity>
-
-                  <Text
-                    style={{
-                      fontSize: 25,
-                      fontWeight: "bold",
-                      color: "white",
-                      textShadowColor: "black",
-                      textShadowRadius: 5,
-                    }}
-                  >
-                    {activity.heading}
-                  </Text>
-                </View>
-
-                <Fontisto name="favorite" size={24} color="white" />
+                  {activity.heading}
+                </Text>
               </View>
 
+              <Fontisto name="favorite" size={24} color="white" />
+            </View>
+
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "flex-start",
+              }}
+            >
               <View
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
+                  borderRadius: 14,
+                  backgroundColor: "#f85e66",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  paddingLeft: 10,
+                  paddingRight: 10,
+                  padding: 5,
                 }}
               >
-                <View
+                <Text style={{ color: "white", fontWeight: "bold" }}>
+                  To do
+                </Text>
+              </View>
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  width: "100%",
+                }}
+              >
+                <Text
                   style={{
                     display: "flex",
-                    borderRadius: 14,
-                    backgroundColor: "#f85e66",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    paddingLeft: 10,
-                    paddingRight: 10,
-                    padding: 5,
+                    color: "white",
+                    fontSize: 24,
+                    paddingTop: 10,
+                    fontWeight: "bold",
+                    width: "70%",
                   }}
                 >
-                  <Text style={{ color: "white", fontWeight: "bold" }}>
-                    To do
-                  </Text>
-                </View>
+                  {activity.subHeading}
+                </Text>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
+                  <FontAwesome
+                    style={{ paddingTop: 10, paddingRight: 4 }}
+                    name="star"
+                    size={20}
+                    color="white"
+                  />
                   <Text
                     style={{
-                      display: "flex",
                       color: "white",
                       fontSize: 24,
                       paddingTop: 10,
                       fontWeight: "bold",
-                      width: "70%",
                     }}
                   >
-                    {activity.subHeading}
+                    {activity.rate}
                   </Text>
-                  <View
-                    style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <FontAwesome
-                      style={{ paddingTop: 10, paddingRight: 4 }}
-                      name="star"
-                      size={20}
-                      color="white"
-                    />
-                    <Text
-                      style={{
-                        color: "white",
-                        fontSize: 24,
-                        paddingTop: 10,
-                        fontWeight: "bold",
-                      }}
-                    >
-                      {activity.rate}
-                    </Text>
-                  </View>
-                </View>
-                <View
-                  style={[styles.tagviews, { backgroundColor: props.colour }]}
-                >
-                  <Image
-                    style={styles.profileImage}
-                    source={require("../../assets/HomeScreen/Profile_pic.jpg")}
-                  />
-
-                  {activity.tags.slice(0, 10).map((tag, index) => (
-                    <TagComponent key={index} tag={tag} />
-                  ))}
-                  {activity.tags.length > 10 && (
-                    <Text
-                      style={{ color: "white", fontSize: 12, marginLeft: 4 }}
-                    >
-                      +{activity.tags.length - 10}
-                    </Text>
-                  )}
                 </View>
               </View>
+              <View
+                style={[styles.tagviews, { backgroundColor: props.colour }]}
+              >
+                <Image
+                  style={styles.profileImage}
+                  source={require("../../assets/HomeScreen/Profile_pic.jpg")}
+                />
+
+                {activity.tags.slice(0, 10).map((tag, index) => (
+                  <TagComponent key={index} tag={tag} />
+                ))}
+                {activity.tags.length > 10 && (
+                  <Text style={{ color: "white", fontSize: 12, marginLeft: 4 }}>
+                    +{activity.tags.length - 10}
+                  </Text>
+                )}
+              </View>
             </View>
-          </LinearGradient>
-        </SafeAreaView>
+          </View>
+        </LinearGradient>
       </ImageBackground>
       <View style={{ display: "flex", flexDirection: "column", padding: 25 }}>
         <Text style={{ fontSize: 22, fontWeight: "bold" }}>Information</Text>
@@ -315,7 +311,7 @@ export default ActivityInformation;
 const styles = StyleSheet.create({
   imagecontainer: {
     width: "100%",
-    height: screenwidth * 1.2,
+    height: screenwidth * 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   subheading: {
@@ -338,23 +334,17 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     width: "100%",
-    padding: 15,
+    padding: 10,
   },
 
-  heading: {
-    color: "white",
-    fontSize: 12,
-  },
   tagviews: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
-    alignItems: "center",
     flexWrap: "wrap",
-    paddingTop: 10,
+    paddingTop: 20,
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
-    height: 50,
     width: "100%",
   },
 
