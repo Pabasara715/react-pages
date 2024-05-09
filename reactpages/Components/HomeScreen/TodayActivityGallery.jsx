@@ -123,7 +123,7 @@ const TodayActivityGallery = () => {
         "gardening",
         "home",
         "herbs",
-        "vegetables",
+        // "vegetables",
         // "growing",
         // "tracking",
         // "progress",

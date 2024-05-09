@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 4,
     borderRadius: 5,
+    height: 25,
     backgroundColor: "transparent",
     borderColor: "white",
     borderWidth: 1,
