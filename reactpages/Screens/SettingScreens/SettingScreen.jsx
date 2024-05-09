@@ -248,6 +248,32 @@ const SettingScreen = () => {
           borderWidth: 1,
           padding: 10,
           borderRadius: 15,
+          borderColor: "red",
+        }}
+      >
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <AntDesign name="delete" size={24} color="red" />
+          <Text style={[styles.settingmenuname, { color: "red" }]}>
+            Delete Account
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: 20,
+          width: screenwidth - 50,
+          borderWidth: 1,
+          padding: 10,
+          borderRadius: 15,
           borderColor: "#e2e2e2",
           marginBottom: 40,
         }}
